@@ -1,0 +1,30 @@
+{
+    "name": "histrix/api-client",
+    "description": "Histrix API Wraper",
+    "keywords": [
+        "framework",
+        "http",
+        "rest",
+        "web service",
+        "curl",
+        "client",
+        "HTTP client"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "diego2k",
+            "email": "diego2k@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Histrix\\API\\": "src/"
+        }
+    },
+    "require": {
+	"php": ">=7.0"
+    }
+}
