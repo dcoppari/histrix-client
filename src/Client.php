@@ -16,12 +16,12 @@ class Client
 	{
 		if($url == '' || $username == '' || $password == '' || $grant_type == '')
 		{
-			throw new Exception("Bad Request");
+			throw new \Exception("Bad Request");
 		}
 
 		if(!is_array($auth) || !isset($auth[0]) || !isset($auth[1]) )
 		{
-			throw new Exception("No client authentication provided, you must provide id/secret in order to continue", 1);
+			throw new \Exception("No client authentication provided, you must provide id/secret in order to continue", 1);
 		}
 
 		$this->id = $auth[0];
@@ -73,14 +73,14 @@ class Client
 
 	    if($err != '')
 	    {
-	    	throw new Exception("Request Error: $err", 1);
+	    	throw new \Exception("Request Error: $err", 1);
 		}
 
 	    $response = json_decode($response, true);
 
 	    if( json_last_error() !== JSON_ERROR_NONE )
 	    {
-	    	throw new Exception("Malformat response", 1);
+	    	throw new \Exception("Malformat response", 1);
 	    }
 
 		return $response;
@@ -125,7 +125,7 @@ class Client
 
 		if( !$this->checkToken() )
 		{
-			throw new Exception("Error Processing Request");
+			throw new \Exception("Error Processing Request");
 		}
 		else
 		{
